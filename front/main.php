@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CINEMA</title>
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/splide.min.css">
-  <link rel="stylesheet" href="./css/mystyle.css">
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/jquery-3.6.0.min.js"></script>
-  <script src="./js/myjs.js"></script>
-  <script src="https://kit.fontawesome.com/7e94f0c211.js" crossorigin="anonymous"></script>
-  <script src="./js/splide.min.js"></script>
-</head>
-
-<body>
-  <header id="navMenu" class="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="container">
-        <a id="logo" class="navbar-brand " href="index.php"><img src="./img/logo.svg" width="50"></a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMenu">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">影城首頁</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="?">線上訂票</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                會員專區
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <section id="bannerSlider">
+<section id="bannerSlider">
     <div id="mycaption" class="carousel slide" data-bs-ride="carousel">
       <ol class="carousel-indicators">
         <li data-bs-target="#mycaption" data-bs-slide-to="0" class="active"></button>
@@ -177,41 +125,27 @@
     </div>
     <div class="container">
       <div class="row row-cols-1 row-cols-md-3 g-4" id="nowMovie">
+        <a href="?do=intro&id=1">
         <div class="col">
           <div class="card h-100">
-            <img src="https://picsum.photos/1920/1080/?random=3" style="width: 350px;height: 400px;" class="card-img-top" alt="...">
+            <img src="./img/movie1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
+              <h5 class="card-title">我沒有談的那場戀愛</h5>
             </div>
             <div class="card-footer text-end">
               <small class="text-muted"><b>10</b> <i class="fas fa-heart"></i></small>
             </div>
           </div>
         </div>
+      </a>
         <div class="col">
           <div class="card h-100">
-            <img src="https://picsum.photos/1920/1080/?random=1" style="width: 350px;height: 400px;" class="card-img-top" alt="...">
+            <img src="./img/movie2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <h5 class="card-title">複身犯</h5>
             </div>
             <div class="card-footer text-end">
               <small class="text-muted"><b>10</b> <i class="far fa-heart"></i></small>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://picsum.photos/1920/1080/?random=2" style="width: 350px;height: 400px;" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
             </div>
           </div>
         </div>
@@ -219,60 +153,26 @@
       <div class="row row-cols-1 row-cols-md-3 g-4" id="comingMovie" style="display:none;">
         <div class="col">
           <div class="card h-100">
-            <img src="https://picsum.photos/1920/1080/?random=4" style="width: 350px;height: 400px;" class="card-img-top" alt="...">
+            <img src="./img/movie4.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer text-end">
-              <small class="text-muted"><b>10</b> <i class="fas fa-heart"></i></small>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://picsum.photos/1920/1080/?random=5" style="width: 350px;height: 400px;" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <h5 class="card-title">當男人戀愛時</h5>
             </div>
             <div class="card-footer text-end">
               <small class="text-muted"><b>10</b> <i class="far fa-heart"></i></small>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://picsum.photos/1920/1080/?random=6" style="width: 350px;height: 400px;" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-        </div>
       </div>
-
     </div>
   </section>
-  <footer class="text-center mb-1">
-    <small>
-      copyright &copy; 2021 <span style="color: #95a5a6;">CCJ Design</span>. All Rights Reserved
-    </small>
-  </footer>
-
   <script>
-    $("#nowBtn").click(function(){
+    $("#nowBtn").click(function () {
       $(".typeBtn").removeClass("typeBtnactive");
       $(this).addClass("typeBtnactive");
       $("#comingMovie").hide();
       $("#nowMovie").show();
     })
-    $("#comingBtn").click(function(){
+    $("#comingBtn").click(function () {
       $(".typeBtn").removeClass("typeBtnactive");
       $(this).addClass("typeBtnactive");
       $("#nowMovie").hide();
@@ -286,6 +186,3 @@
       $("#cover").fadeOut();
     })
   </script>
-</body>
-
-</html>

@@ -1,3 +1,6 @@
+a{
+  text-decoration: none;
+}
 @media (max-width: 767.98px) {
   #logo{
     margin: auto;
@@ -72,4 +75,19 @@
   border: 1px solid #dee0e0;
   background-color: #043353;
   color: #dee0e0;
+}
+.card-img-overlay{
+  top:75%;
+}
+@media (max-width: 992px) {
+  .card-img-overlay{
+    top:10%;
+  }
+}
+#nowMovie .card-title,#comingMovie .card-title{
+  color: #043353;
+}
+.bgShadow{
+  box-shadow:-1px -1px 7px #ffffff73,
+  1px 1px 5px rgba(94,104,121,0.288);
 }

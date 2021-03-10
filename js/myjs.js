@@ -24,4 +24,6 @@ $(document).ready(function(){
   });
   $(window).resize(bgmenu); //對window重新調整尺寸時
   bgmenu();
+
+  
 })
