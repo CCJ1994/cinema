@@ -9,6 +9,7 @@ include_once "base.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CINEMA</title>
+  <link rel="shortcut icon" type="image/x-svg" href="./img/icon.svg">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/splide.min.css">
   <link rel="stylesheet" href="./css/mystyle.css">
@@ -64,6 +65,18 @@ include_once "base.php";
     include_once "./backend/main.php";
   }
   ?>
+  <div id="addModal">
+    <div class="addModal"></div>
+    <div class="addContent container col-md-6 col-10 my-5">
+      <?php
+      
+        if($_GET['do']){
+          include "modal/".$do.".php";
+        }
+        
+      ?>
+    </div>
+  </div>
   <section>
     <div id="loginCover" style="display:none;">
       <div class="modalbg"></div>

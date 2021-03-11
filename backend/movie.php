@@ -10,7 +10,7 @@ $start=($now-1)*$div;
 $rows=$Movie->all("limit $start,$div");
 ?>
 <div class="pt-3 pb-2 mb-3 border-bottom">
-  <h2 class="title"><?=$tstr[$do];?></h2>
+  <h2 class="title">電影管理</h2>
 </div>
 <form action="./api/edit.php" method="post">
   <div id="works" class="row  row-cols-1 row-cols-md-3 g-3 my-3">
@@ -18,24 +18,30 @@ $rows=$Movie->all("limit $start,$div");
   foreach($rows as $row){
   ?>
     <div class="col my-2">
-      <div class="card border-0">
-        <img src="./image/<?=$row['img'];?>" class="card-img-top" style="height:180px;object-fit:cover;">
+      <div class="card">
+        <img src="./img/<?=$row['img'];?>" class="card-img-top" style="height:180px;object-fit:cover;">
         <div class="card-body">
           <div class="card-title form-floating border-bottom">
-            <select class="form-select border-0" id="selectWork<?=$row['id'];?>" name="type[]">
-              <option value="1" <?=($row['type']=='1')?'selected':'';?>>Web Design</option>
-              <option value="2" <?=($row['type']=='2')?'selected':'';?>>Graphic Design</option>
-              <option value="3" <?=($row['type']=='3')?'selected':'';?>>Photography</option>
+            <select class="form-select border-0" id="level<?=$row['id'];?>" name="level[]">
+              <option value="1" <?=($row['level']=='1')?'selected':'';?>>普遍級</option>
+              <option value="2" <?=($row['level']=='2')?'selected':'';?>>輔導級</option>
+              <option value="3" <?=($row['level']=='3')?'selected':'';?>>保護級</option>
+              <option value="4" <?=($row['level']=='4')?'selected':'';?>>限制級</option>
             </select>
-            <label for="selectWork<?=$row['id'];?>" style="font-size:12px;">作品類型</label>
+            <label for="level<?=$row['id'];?>" style="font-size:12px;">分級</label>
+          </div>
+          
+          <div class="card-text border-bottom my-1">
+            <input style="height:50px;" class="form-control border-0" name="zhname[]" placeholder="中文片名"
+            value="<?=$row['zhname'];?>"  >
           </div>
           <div class="card-text border-bottom my-1">
-            <textarea class="form-control border-0" name="text[]" placeholder="Description"
-            ><?=$row['text'];?></textarea>
+            <input style="height:50px;" class="form-control border-0" name="enname[]" placeholder="英文片名"
+            value="<?=$row['enname'];?>"  >
           </div>
           <div class="card-text border-bottom my-1">
-            <textarea style="height:50px;" class="form-control border-0" name="note[]" placeholder="Note"
-            ><?=$row['note'];?></textarea>
+            <textarea class="form-control border-0" name="intro[]" placeholder="Description"
+            ><?=$row['intro'];?></textarea>
           </div>
           <div class="d-flex justify-content-end">
             <div class="form-check mx-2">
@@ -49,7 +55,6 @@ $rows=$Movie->all("limit $start,$div");
               <label class="form-check-label" for="workDel<?=$row['id'];?>">刪除</label>
             </div>
             <input type="hidden" name="id[]" value="<?=$row['id'];?>">
-            <input type="hidden" name="table" value="<?=$do;?>">
           </div>
           <div>
             <button class="chgbtn btn btn-secondary" type="button"

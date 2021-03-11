@@ -9,6 +9,7 @@ include_once "base.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CINEMA</title>
+  <link rel="shortcut icon" type="image/x-svg" href="./img/icon.svg">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/splide.min.css">
   <link rel="stylesheet" href="./css/mystyle.css">
@@ -104,20 +105,7 @@ include_once "base.php";
       copyright &copy; 2021 <span style="color: #95a5a6;">CCJ Design</span>. All Rights Reserved
     </small>
   </footer>
-  <script>
-    var webaddr="http://192.168.64.2/cinema/index.php";
-    switch (location.href) {
-      case webaddr:
-        $("#navMenu .nav-link").eq(0).addClass("active");
-        break;
-      case webaddr+"?do=order":
-        $("#navMenu .nav-link").eq(1).addClass("active");
-        break;
-      case webaddr+"?do=reg":
-        $("#navMenu .nav-link").eq(2).addClass("active");
-        break;
-    }
-  </script>
+  
 </body>
 
 </html>
