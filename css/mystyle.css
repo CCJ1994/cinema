@@ -20,7 +20,7 @@ a{
   width: 5px !important;
   border-radius: 50%;
 }
-#cover{
+#orderCover,#loginCover{
   top: 0px;
   position: fixed;
   z-index: 99999;

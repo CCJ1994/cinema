@@ -1,5 +1,4 @@
 <section class="mt-5">
-
   <div class="card bg-dark text-white rounded-0">
     <img src="./img/poster.jpg" class="card-img" alt="...">
     <div class="card-img-overlay">

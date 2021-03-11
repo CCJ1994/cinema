@@ -24,6 +24,40 @@ $(document).ready(function(){
   });
   $(window).resize(bgmenu); //對window重新調整尺寸時
   bgmenu();
+  $("#nowBtn").click(function() {
+    $(".typeBtn").removeClass("typeBtnactive");
+    $(this).addClass("typeBtnactive");
+    $("#comingMovie").hide();
+    $("#nowMovie").show();
+  })
+  $("#comingBtn").click(function() {
+    $(".typeBtn").removeClass("typeBtnactive");
+    $(this).addClass("typeBtnactive");
+    $("#nowMovie").hide();
+    $("#comingMovie").show();
+  })
+  
+  $("#orderBtn").click(function() {
+    $("#orderCover").fadeIn();
+  })
+  $("#loginBtn").click(function() {
+    $("#loginCover").fadeIn();
+  })
+  $(".close,.modalbg").click(function() {
+    $("#orderCover,#loginCover").fadeOut();
+  })
 
+  var webaddr="http://192.168.64.2/cinema/index.php";
+    switch (location.href) {
+      case webaddr:
+        $("#navMenu .nav-link").eq(0).addClass("active");
+        break;
+      case webaddr+"?do=order":
+        $("#navMenu .nav-link").eq(1).addClass("active");
+        break;
+      case webaddr+"?do=reg":
+        $("#navMenu .nav-link").eq(2).addClass("active");
+        break;
+    }
   
 })

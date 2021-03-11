@@ -23,12 +23,7 @@ include_once "base.php";
   <header id="navMenu" class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="container">
-        <?php
-        if($_SESSION['login']=='admin'){  ?>
-        <a id="logo" class="navbar-brand " href="backend.php"><img src="./img/logo.svg" width="50"></a>
-      <?php  }else{  ?>
         <a id="logo" class="navbar-brand " href="index.php"><img src="./img/logo.svg" width="50"></a>
-      <?php  }  ?>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,7 +33,7 @@ include_once "base.php";
               <a class="nav-link" aria-current="page" href="index.php">影城首頁</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?do=order">線上訂票</a>
+              <a class="nav-link" href="?do=movie">電影管理</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
@@ -62,11 +57,11 @@ include_once "base.php";
   </header>
   <?php
   $do=(isset($_GET['do']))?$_GET['do']:'main';
-  $file="./front/".$do.".php";
+  $file="./backend/".$do.".php";
   if(file_exists($file)){
     include_once $file;
   }else{
-    include_once "./front/main.php";
+    include_once "./backend/main.php";
   }
   ?>
   <section>
