@@ -1,5 +1,6 @@
 <?php
 include_once "base.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@ include_once "base.php";
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="container">
         <?php
-        if($_SESSION['login']=='admin'){  ?>
+        if(!empty($_SESSION['login']) && $_SESSION['login']=='admin'){  ?>
         <a id="logo" class="navbar-brand " href="backend.php"><img src="./img/logo.svg" width="50"></a>
       <?php  }else{  ?>
         <a id="logo" class="navbar-brand " href="index.php"><img src="./img/logo.svg" width="50"></a>

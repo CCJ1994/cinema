@@ -85,3 +85,11 @@ $(document).ready(function(){
     if(y&&url)
     $(y).load(url)
   }
+  function del(table,id){
+    let yes=confirm('確定刪除嗎？');
+    if(yes){
+      $.post('api/del.php',{table,id},function(){
+        location.reload();
+      })
+    }
+  }

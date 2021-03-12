@@ -13,15 +13,15 @@ $rows=$Movie->all("limit $start,$div");
   <h2 class="title">電影管理</h2>
 </div>
 <form action="./api/edit.php" method="post">
-  <div id="works" class="row  row-cols-1 row-cols-md-3 g-3 my-3">
+  <div id="editmovie" class="row row-cols-1 row-cols-md-3 g-3 my-3">
     <?php
   foreach($rows as $row){
   ?>
     <div class="col my-2">
       <div class="card">
         <img src="./img/<?=$row['img'];?>" class="card-img-top" style="height:180px;object-fit:cover;">
-        <div class="card-body">
-          <div class="card-title form-floating border-bottom">
+        <div class="card-body row g-3">
+          <div class="card-text form-floating border-bottom col-6">
             <select class="form-select border-0" id="level<?=$row['id'];?>" name="level[]">
               <option value="1" <?=($row['level']=='1')?'selected':'';?>>普遍級</option>
               <option value="2" <?=($row['level']=='2')?'selected':'';?>>輔導級</option>
@@ -30,18 +30,35 @@ $rows=$Movie->all("limit $start,$div");
             </select>
             <label for="level<?=$row['id'];?>" style="font-size:12px;">分級</label>
           </div>
-          
-          <div class="card-text border-bottom my-1">
-            <input style="height:50px;" class="form-control border-0" name="zhname[]" placeholder="中文片名"
+          <div class="card-text form-floating border-bottom col-6">
+            <input class="form-control border-0" id="length<?=$row['id'];?>" name="length[]" placeholder="中文片名"
+            value="<?=$row['length'];?>"  >
+            <label for="length<?=$row['id'];?>" style="font-size:12px;">片長</label>
+          </div>
+          <div class="card-text form-floating border-bottom col-6">
+            <input class="form-control border-0" id="zhname<?=$row['id'];?>" name="zhname[]" placeholder="中文片名"
             value="<?=$row['zhname'];?>"  >
+            <label for="zhname<?=$row['id'];?>" style="font-size:12px;">中文片名</label>
           </div>
-          <div class="card-text border-bottom my-1">
-            <input style="height:50px;" class="form-control border-0" name="enname[]" placeholder="英文片名"
+          <div class="card-text form-floating border-bottom col-6">
+            <input class="form-control border-0" id="enname<?=$row['id'];?>" name="enname[]" placeholder="中文片名"
             value="<?=$row['enname'];?>"  >
+            <label for="enname<?=$row['id'];?>" style="font-size:12px;">英文片名</label>
           </div>
-          <div class="card-text border-bottom my-1">
-            <textarea class="form-control border-0" name="intro[]" placeholder="Description"
+          <div class="card-text form-floating border-bottom col-6">
+            <input class="form-control border-0" id="actor<?=$row['id'];?>" name="actor[]" placeholder="中文片名"
+            value="<?=$row['actor'];?>"  >
+            <label for="actor<?=$row['id'];?>" style="font-size:12px;">演員</label>
+          </div>
+          <div class="card-text form-floating border-bottom col-6">
+            <input class="form-control border-0" id="director<?=$row['id'];?>" name="director[]" placeholder="中文片名"
+            value="<?=$row['director'];?>"  >
+            <label for="director<?=$row['id'];?>" style="font-size:12px;">導演</label>
+          </div>
+          <div class="card-text form-floating border-bottom my-1">
+            <textarea class="form-control border-0" id="intro<?=$row['id'];?>" name="intro[]" placeholder="Description"
             ><?=$row['intro'];?></textarea>
+            <label for="intro<?=$row['id'];?>" style="font-size:12px;">劇情簡介</label>
           </div>
           <div class="d-flex justify-content-end">
             <div class="form-check mx-2">
@@ -49,10 +66,9 @@ $rows=$Movie->all("limit $start,$div");
                 value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
               <label class="form-check-label" for="workSh<?=$row['id'];?>">顯示</label>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="workDel<?=$row['id'];?>" name="del[]"
-                value="<?=$row['id'];?>">
-              <label class="form-check-label" for="workDel<?=$row['id'];?>">刪除</label>
+            <div >
+              <input class="btn btn-sm btn-outline-secondary" type="button" id="moviekDel<?=$row['id'];?>" name="del[]"
+                value="刪除" onclick="del('cinema_movie',<?=$row['id']?>)">
             </div>
             <input type="hidden" name="id[]" value="<?=$row['id'];?>">
           </div>
@@ -95,9 +111,12 @@ $rows=$Movie->all("limit $start,$div");
   </div>
   <?php if(!empty($row)){ ?>
   <div class="text-end">
-    <button type="submit" class="btn saveBtn">Save</button>
+    <button type="submit" class="btn btn-outline-primary">Save</button>
   </div>
   <?php } ?>
 </form>
   </div>
 </section>
+<script>
+  
+</script>
